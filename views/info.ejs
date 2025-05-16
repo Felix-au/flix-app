@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flix</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+
+
+  <style>
+    .col2{
+    padding-left: 130px;
+
+}
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #ffffff;
+        background-color: #141414;
+    }
+    .movie-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    h1, h2 {
+        color: #e50914;
+        transition: color 0.3s ease;
+    }
+    h2:hover {
+  color: blue;
+}
+h1:hover {
+  color: blue;
+}
+    .section {
+        margin-bottom: 30px;
+    }
+    .movie-poster {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        transition: all 0.5s ease;
+    }
+    .movie-poster:hover{
+      box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+      transform: scale(1.025);
+    }
+    .gif-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        
+    }
+    .gif-container img {
+        width: 32%;
+        border-radius: 8px;
+        transition: all 0.5s ease;
+
+    }
+    .gif-container img:hover{
+      box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+      transform: scale(1.05);
+    }
+    .movie-info {
+        background-color: rgba(229, 9, 20, 0.1);
+        border-left: 4px solid #e50914;
+        padding: 15px;
+        margin-top: 20px;
+    }
+</style>
+
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+
+  <br><br><br><br><br><br>
+
+
+
+  <main>
+    <div class="movie-content">
+        <h1>The Avengers (2012)</h1>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <img src="https://th.bing.com/th/id/OIP.nfEMVTdKvwQUi1EXVXi3pAHaK-?rs=1&pid=ImgDetMain" alt="The Avengers Movie Poster" class="movie-poster" />
+            </div>
+            <div class="col-md-8">
+                <h2>Earth's Mightiest Heroes Assemble</h2>
+                <p>When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!</p>
+                
+                <div class="movie-info">
+                    <p><strong>Director:</strong> Joss Whedon</p>
+                    <p><strong>Stars:</strong> Robert Downey Jr., Chris Evans, Scarlett Johansson</p>
+                    <p><strong>Release Date:</strong> May 4, 2012</p>
+                    <p><strong>Runtime:</strong> 2h 23min</p>
+                </div>
+
+                <div class="movie-info">
+                  <a href="cse4" class="video-open">
+                    <img src="images/play.png" class="play" alt="" style="width: 60px; height: 60px;"/>
+                  </a>
+                  <span><strong>Watch Right Now</strong></span>
+              </div>
+            </div>
+        </div>
+
+
+        <br>
+
+        <div class="section">
+            <h2>Epic Moments</h2>
+            <div class="gif-container">
+                <img src="https://www.bing.com/th/id/OGC.cc799960925a09c58a6adda48d1a3229?pid=1.7&rurl=https%3a%2f%2fmedia1.tenor.com%2fimages%2fcc799960925a09c58a6adda48d1a3229%2ftenor.gif%3fitemid%3d14586697&ehk=hjf%2fPr2FZwEWa7fNJaQw%2f1Dk6326seLO%2bTiHk0wHUNI%3d" alt="Avengers Assemble GIF" />
+                <img src="https://www.bing.com/th/id/OGC.1096ffaa922946df82ce1e18064755d5?pid=1.7&rurl=https%3a%2f%2f3.bp.blogspot.com%2f-5-cadBC3JmE%2fV1Mx4rms08I%2fAAAAAAAAWJ8%2f55ODbFzpxl8AO3cCxqSpCoJ6dHWbsRu4QCLcB%2fs1600%2fgiphy.gif&ehk=VuM66dyG9T16W5CVmyGqQmKOGY3JQBReP4qD8H0wdXQ%3d" alt="Hulk Smash GIF" />
+                <img src="https://www.bing.com/th/id/OGC.d192e5057249f875e66684500532fd3d?pid=1.7&rurl=https%3a%2f%2fi2.wp.com%2f78.media.tumblr.com%2feb02974ba97009140ea5521005ac7ca8%2ftumblr_p3oluxaVVi1qj0fdgo5_540.gif%3fw%3d605%26ssl%3d1&ehk=ro7gebNO83wQKTPXBhgSU36FUae0y%2bJCnuTgEyhhmng%3d" alt="Iron Man Suit Up GIF" />
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Why Watch It?</h2>
+            <ul>
+                <li>Unprecedented superhero team-up</li>
+                <li>Spectacular action sequences</li>
+                <li>Witty dialogue and character interactions</li>
+                <li>Sets the stage for the larger Marvel Cinematic Universe</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Trailer</h2>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/eOrNdBpGMv8?si=kvi__j8LuFFD7ieP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<%- include('partials/footer') %>
+
+
+</body>
+
+</html>

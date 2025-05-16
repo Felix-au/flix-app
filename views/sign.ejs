@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flix</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+
+  <style>
+    .col2{
+    padding-left: 130px;
+
+}
+body {
+    background-color: #141414;
+    color: #ffffff;
+}
+
+.signup-container {
+    max-width: 450px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
+}
+
+.signup-container h2 {
+    color: #e50914;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-container h2:hover {
+    color: blue;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
+}
+
+.signup-form .form-group {
+    margin-bottom: 20px;
+}
+
+.signup-form label {
+    font-weight: bold;
+    color: #bbb;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.signup-form .form-control {
+    background-color: black;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: #fff;
+    height: 50px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-form .form-control:focus {
+    outline: none;
+    border-color: #e50914;
+    box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
+    transform: scale(1.02);
+    color: red;
+}
+
+.signup-btn {
+    background-color: #e50914;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-btn:hover {
+    background-color: blue;
+    transform: scale(1.05);
+}
+
+.text-center a {
+    color: #e50914;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+h2:hover {
+    color: blue;
+    transform: scale(1.05);
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+
+  <br><br><br><br><br><br>
+
+
+
+  <div class="signup-container">
+    <h2 class="text-center">Sign Up for Flix</h2>
+    <form class="signup-form">
+        <div class="form-group">
+            <label for="fullName">Username</label>
+            <input type="text" class="form-control" id="fullName" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+        </div>
+        <button type="submit" class="signup-btn">Sign Up</button>
+    </form>
+    <p class="text-center mt-3">Already have an account? <a href="login">Log In</a></p>
+</div>
+
+
+
+<%- include('partials/footer') %>
+
+
+
+<script>
+    document.querySelector(".signup-form").addEventListener("submit", async function(event) {
+        event.preventDefault();
+  
+        const fullName = document.getElementById("fullName").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+  
+        if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            return;
+        }
+  
+        try {
+            const response = await fetch('/api/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ fullName, email, password })
+            });
+  
+            const data = await response.json();
+  
+            if (response.ok) {
+                alert(data.message);
+                this.reset();
+                setTimeout(function() {
+                    window.location.href = "login";
+                }, 3000);
+            } else {
+                alert(data.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert("An error occurred while signing up. Please try again.");
+        }
+    });
+  </script>
+
+
+
+</body>
+
+</html>

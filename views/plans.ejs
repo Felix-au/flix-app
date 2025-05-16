@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flix</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+
+  <style>
+    .col2{
+    padding-left: 130px;
+
+}
+    .plan-container {
+      display: flex;
+      justify-content: space-around;
+      padding: 50px 0;
+    }
+    .plan-card {
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .plan-card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 100px rgba(255, 0, 0, 0.8);
+
+    }
+    .plan-title {
+      color: #e50914;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .plan-title:hover {
+      color: blue;
+    }
+    .plan-price {
+      color: #ffffff;
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .plan-features {
+      color: #cccccc;
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    .plan-features li {
+      margin-bottom: 10px;
+    }
+    .plan-button {
+      background-color: #e50914;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .plan-button:hover {
+      background-color: blue;
+      transform: scale(1.1);
+
+    }
+    h1, h2 {
+        transition: color 0.3s ease;
+        color: #e50914;
+    }
+    
+    
+h1:hover {
+  color: blue;
+}
+  </style>
+
+
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+
+  <br><br><br><br><br><br>
+
+
+  <main>
+    <div class="container">
+      <h1 style="text-align: center; margin: 50px 0;">Choose Your Plan</h1>
+      <div class="plan-container">
+        <div class="plan-card">
+          <h2 class="plan-title">Basic</h2>
+          <div class="plan-price">$8.99/mo</div>
+          <ul class="plan-features">
+            <li>SD Quality</li>
+            <li>Watch on 1 device</li>
+            <li>Limited content</li>
+          </ul>
+          <button class="plan-button">Choose Plan</button>
+        </div>
+        <div class="plan-card">
+          <h2 class="plan-title">Standard</h2>
+          <div class="plan-price">$13.99/mo</div>
+          <ul class="plan-features">
+            <li>HD Quality</li>
+            <li>Watch on 2 devices</li>
+            <li>Full content library</li>
+          </ul>
+          <button class="plan-button">Choose Plan</button>
+        </div>
+        <div class="plan-card">
+          <h2 class="plan-title">Premium</h2>
+          <div class="plan-price">$17.99/mo</div>
+          <ul class="plan-features">
+            <li>Ultra HD Quality</li>
+            <li>Watch on 4 devices</li>
+            <li>Full content library</li>
+            <li>Offline viewing</li>
+          </ul>
+          <button class="plan-button">Choose Plan</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <%- include('partials/footer') %>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const planButtons = document.querySelectorAll('.plan-button');
+      planButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const planTitle = this.closest('.plan-card').querySelector('.plan-title').textContent;
+          alert(`You have selected the ${planTitle} plan. Error: Please Sign Up/Log In first.`);
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

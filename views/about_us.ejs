@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flix</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <style>
+    main {
+      padding: 30px 180px;
+    }
+
+    .about-section {
+      padding: 50px 0;
+      color: #ffffff;
+    }
+    
+    .about-title {
+      color: #e50914;
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      transition: color 0.3s ease;
+    }
+
+    .about-title:hover {
+      color: blue; 
+    }
+
+    .about-content {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .team-section {
+      padding: 50px 0;
+    }
+
+    .team-title {
+      color: #e50914;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .team-member {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .team-member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .team-member h3 {
+      color: #ffffff;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .team-member p {
+      color: #cccccc;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+
+  <br><br><br><br><br><br>
+
+
+
+  <main>   
+    <div class="container">
+      <section class="about-section">
+        <h1 class="about-title">About Flix</h1>
+        <div class="about-content">
+          <p>Welcome to Flix, your premier destination for streaming the latest movies and TV shows. Founded in 2023, we're passionate about bringing high-quality entertainment to viewers around the world.</p>
+          <p>At Flix, we believe that great stories have the power to inspire, entertain, and bring people together. That's why we're committed to curating a diverse collection of content that caters to all tastes and interests.</p>
+          <p>Our team of dedicated professionals works tirelessly to ensure that you have access to the best streaming experience possible. From cutting-edge technology to personalized recommendations, we're always looking for ways to enhance your viewing pleasure.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+
+  <%- include('partials/footer') %>
+
+
+
+</body>
+
+</html>

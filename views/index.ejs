@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flix</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <%- include('partials/header') %>
+    
+    <br><br><br><br><br><br>
+
+    <div id="dynamic-content"></div> 
+
+    <%- include('partials/footer') %>
+    
+    <script>
+        fetch("/api/content") 
+          .then(response => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then(data => {
+            const content = data[0].mainContent;
+      
+            const welcomeSection = document.createElement("div");
+            welcomeSection.style.cssText = "padding: 60px; background: #202020; color: #d1d0cf; text-align: center; margin: 20px; border-radius: 10px; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden;";
+            welcomeSection.onmouseover = () => {
+              welcomeSection.style.transform = "scale(1.05)";
+              welcomeSection.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.5)";
+            };
+            welcomeSection.onmouseout = () => {
+              welcomeSection.style.transform = "scale(1)";
+              welcomeSection.style.boxShadow = "none";
+            };
+            
+            const welcomeTitle = document.createElement("h1");
+            welcomeTitle.style.cssText = `font-size: 2.5em; color: ${content.welcome.style.color}; transition: color 0.3s ease;`;
+            welcomeTitle.textContent = content.welcome.title;
+            welcomeTitle.onmouseover = () => welcomeTitle.style.color = content.welcome.style.hoverColor; 
+            welcomeTitle.onmouseout = () => welcomeTitle.style.color = content.welcome.style.color; 
+            
+            const welcomeSubtitle = document.createElement("p");
+            welcomeSubtitle.style.cssText = "font-size: 1.2em; max-width: 600px; margin: auto;";
+            welcomeSubtitle.textContent = content.welcome.subtitle;
+            
+            welcomeSection.appendChild(welcomeTitle);
+            welcomeSection.appendChild(welcomeSubtitle);
+            
+            const aboutSection = document.createElement("section");
+            aboutSection.style.cssText = "padding: 60px; background: #202020; color: #d1d0cf; text-align: center; margin: 20px; border-radius: 10px; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden;";
+            aboutSection.onmouseover = () => {
+              aboutSection.style.transform = "scale(1.05)";
+              aboutSection.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.5)";
+            };
+            aboutSection.onmouseout = () => {
+              aboutSection.style.transform = "scale(1)";
+              aboutSection.style.boxShadow = "none";
+            };
+      
+            const aboutTitle = document.createElement("h2");
+            aboutTitle.style.cssText = `font-size: 2em; color: ${content.about.style.color}; transition: color 0.3s ease;`;
+            aboutTitle.textContent = content.about.title;
+            aboutTitle.onmouseover = () => aboutTitle.style.color = content.about.style.hoverColor; 
+            aboutTitle.onmouseout = () => aboutTitle .style.color = content.about.style.color; 
+
+            const aboutDescription = document.createElement("p");
+            aboutDescription.style.cssText = "font-size: 1em; max-width: 600px; margin: auto;";
+            aboutDescription.textContent = content.about.description;
+
+            aboutSection.appendChild(aboutTitle);
+            aboutSection.appendChild(aboutDescription);
+
+            document.getElementById("dynamic-content").appendChild(welcomeSection);
+            document.getElementById("dynamic-content").appendChild(aboutSection);
+          })
+          .catch(error => console.error("There was a problem with the fetch operation:", error));
+    </script>
+</body>
+
+</html>

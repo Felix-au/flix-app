@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flix</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+
+  <style>
+    .col2{
+    padding-left: 130px;
+
+}
+body {
+    background-color: #141414;
+    color: #ffffff;
+}
+
+.forgot-password-container {
+    max-width: 450px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.forgot-password-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
+}
+
+.forgot-password-container h2 {
+    color: #e50914;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.forgot-password-container h2:hover {
+    color: blue;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
+}
+
+.forgot-password-form .form-group {
+    margin-bottom: 20px;
+}
+
+.forgot-password-form label {
+    font-weight: bold;
+    color: #bbb;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.forgot-password-form .form-control {
+    background-color: black;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: #fff;
+    height: 50px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.forgot-password-form .form-control:focus {
+    outline: none;
+    border-color: #e50914;
+    box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
+    transform: scale(1.02);
+    color: red;
+}
+
+.reset-btn {
+    background-color: #e50914;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reset-btn:hover {
+    background-color: blue;
+    transform: scale(1.05);
+}
+
+.text-center a {
+    color: #e50914;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+h2:hover {
+    color: blue;
+    transform: scale(1.05);
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+  <br><br><br><br><br><br>
+
+
+  <div class="forgot-password-container">
+    <h2 class="text-center mb-4">Forgot Password</h2>
+    <form class="forgot-password-form">
+      <div class="form-group">
+        <label for="fullName">Username</label>
+        <input type="text" class="form-control" id="fullName" placeholder="Enter your username" required>
+    </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">New Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+      </div>
+      <div class="form-group">
+          <label for="confirmPassword">Confirm New Password</label>
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+      </div>
+        <button type="submit" class="reset-btn">Change Password</button>
+    </form>
+    <p class="text-center mt-3">Remember your password? <a href="login">Log in</a></p>
+</div>
+
+
+
+
+<%- include('partials/footer') %>
+
+
+
+<script>
+    document.querySelector(".forgot-password-form").addEventListener("submit", async function(event) {
+        event.preventDefault();
+    
+        const username = document.getElementById("fullName").value;
+        const email = document.getElementById("email").value;
+        const newPassword = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+    
+        if (newPassword !== confirmPassword) {
+            alert("Passwords do not match. Please try again.");
+            return;
+        }
+    
+        try {
+            const response = await fetch('/api/users');
+            const users = await response.json();
+    
+            if (!users || users.length === 0) {
+                alert("No user data found.");
+                return;
+            }
+    
+            const userIndex = users.findIndex(user => user.fullName === username && user.email === email);
+    
+            if (userIndex !== -1) {
+                const updatedUser  = { ...users[userIndex], password: newPassword };
+    
+                const updateResponse = await fetch(`api/users/${users[userIndex]._id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedUser )
+                });
+    
+                if (updateResponse.ok) {
+                    alert(`Congratulations ${username}! Your password has been reset successfully. You will be redirected to the login page in 3 seconds.`);
+                    setTimeout(function() {
+                        window.location.href = "login";
+                    }, 3000);
+                } else {
+                    alert("Error updating password. Please try again.");
+                }
+            } else {
+                alert("Username or email is wrong. Please try again.");
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert("An error occurred while retrieving user data. Please try again.");
+        }
+    });
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flix - Video Playback</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+          .col2{
+    padding-left: 130px;
+
+}
+        body {
+            background-color: #141414;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .video-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        video {
+            max-width: 100%;
+            max-height: 80vh;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+  <%- include('partials/header') %>
+      <br><br><br><br><br><br>
+      
+    <div class="video-container">
+        <video controls autoplay>
+            <source src="/cse4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+
+    <%- include('partials/footer') %>
+
+      
+    <script src="main.js"></script>
+</body>
+</html>

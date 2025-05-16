@@ -1,0 +1,115 @@
+<header id="main-header">
+    <div class="main-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg navbar-light p-0">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="menu-main-menu-container">
+                  <ul id="top-menu" class="navbar-nav ml-auto">
+                    <li class="menu-item"><a href="index">Home</a></li>
+                    <li class="menu-item"><a href="movie">Movies</a></li>
+                    <li class="menu-item"><a href="gg">Watchlist</a></li>
+                    <li class="menu-item"><a href="plans">Plans</a></li>
+                    <li class="menu-item">
+                      <a href="#">Contact Us</a>
+                      <ul class="sub-menu">
+                        <li class="menu-item"><a href="about_us">About Us</a></li>
+                        <li class="menu-item"><a href="contact">Contact</a></li>
+                        <li class="menu-item"><a href="faq">FAQ</a></li>
+                        <li class="menu-item">
+                          <a href="privacy_policy">Privacy-Policy</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="menu-item login-gg" id="loginButton-gg">
+                      <a href="login">Log In</a>
+                    </li>
+                    <li class="menu-item">
+                      <button 
+                        style="
+                          background-color: #e50914; 
+                          display: none;
+                          border: none; 
+                          color: #fff; 
+                          font-weight: bold; 
+                          border-radius: 6px; 
+                          font-size: 1.1rem; 
+                          cursor: pointer; 
+                          transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;" 
+                        onmouseover="this.style.backgroundColor='blue'; this.style.transform='scale(1.05)';" 
+                        onmouseout="this.style.backgroundColor='#e50914'; this.style.transform='scale(1)';"
+                        id="logoutButton-gg">
+                        Logout
+                      </button>
+                    </li>                                        
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <div class="nav-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="logo">
+    <a href="index">
+      <img src="/images/movie logo.png" alt="Your Logo">
+    </a>
+  </div>
+
+
+
+<script>
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const loginButton = document.getElementById("loginButton-gg");
+  const logoutButton = document.getElementById("logoutButton-gg");
+
+  fetch("api/current", { method: "GET" })
+    .then(response => response.json())
+    .then(data => {
+      const currentUserName = data.name;
+
+      if (currentUserName !== "none") {
+        loginButton.innerHTML = `<a href="#">Hello ${currentUserName}</a>`;
+        loginButton.firstChild.addEventListener("click", (e) => {
+          e.preventDefault(); 
+          alert("You are already logged in!");
+        });
+
+        logoutButton.style.display = "inline-block";
+      } else {
+        loginButton.innerHTML = `<a href="login">Log In</a>`;
+
+        logoutButton.style.display = "none";
+      }
+    })
+    .catch(error => console.error("Error fetching current user:", error));
+
+  logoutButton.addEventListener("click", () => {
+    fetch("api/current", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: "none" }),
+    })
+      .then(response => {
+        if (response.ok) {
+          loginButton.innerHTML = `<a href="login">Log In</a>`;
+          logoutButton.style.display = "none";
+          alert("Logged out successfully!");
+        } else {
+          alert("Error logging out.");
+        }
+      })
+      .catch(error => console.error("Error logging out:", error));
+  });
+});
+
+
+
+</script>

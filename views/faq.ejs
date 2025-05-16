@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flix</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <style>
+        .col2{
+    padding-left: 130px;
+
+}
+    .faq-section {
+      padding: 50px 0;
+      color: #ffffff;
+    }
+    .faq-title {
+      color: #e50914;
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      transition: color 0.3s ease;
+    }
+    .faq-title:hover {
+  color: blue;
+}
+
+    .faq-item {
+      margin-bottom: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .faq-question {
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.5s ease;
+    }
+    .faq-question:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: scale(1.01);
+      color: red;
+
+
+    }
+    .faq-answer {
+      font-size: 16px;
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer:hover {
+      transform: scale(1.01);
+      color: red;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    .faq-answer.active {
+      padding: 15px 20px;
+      max-height: 500px;
+    }
+    .faq-toggle {
+      font-size: 24px;
+      transition: transform 0.3s ease;
+    }
+    .faq-toggle.active {
+      transform: rotate(45deg);
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+
+  <br><br><br><br><br><br>
+
+
+  <main>
+    <div class="container">
+      <section class="faq-section">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              What is Flix?
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Flix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices. You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              How much does Flix cost?
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Watch Flix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from $8.99 to $17.99 a month. No extra costs, no contracts.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Where can I watch?
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Watch anywhere, anytime, on an unlimited number of devices. Sign in with your Flix account to watch instantly on the web at flix.com from your personal computer or on any internet-connected device that offers the Flix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              How do I cancel?
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Flix is flexible. There are no pesky contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              What can I watch on Flix?
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Flix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Flix originals, and more. Watch as much as you want, anytime you want.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+
+  <%- include('partials/footer') %>
+
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const toggle = question.querySelector('.faq-toggle');
+        answer.classList.toggle('active');
+        toggle.classList.toggle('active');
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>
