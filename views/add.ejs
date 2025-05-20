@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flix</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+
+  <style>
+
+        .col2{
+    padding-left: 130px;
+
+}
+    body {
+      background-color: #141414;
+      color: #ffffff;
+    }
+  
+    .login-container {
+      max-width: 450px;
+      margin: 80px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .login-container:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
+    }
+  
+    .login-container h2 {
+      color: #e50914;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .login-container h2:hover {
+      color: blue;
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
+    }
+  
+    .login-form .form-group {
+      margin-bottom: 20px;
+    }
+  
+    .login-form label {
+      font-weight: bold;
+      color: #bbb;
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+  
+    .login-form .form-control {
+      background-color: black;
+      border: 1px solid #444;
+      border-radius: 6px;
+      color: #fff;
+      height: 50px;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .login-form .form-control:focus {
+      outline: none;
+      border-color: #e50914;
+      box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
+      transform: scale(1.02);
+      color: red;
+    }
+  
+    .login-btn {
+      background-color: #e50914;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+   
+
+
+    .login-btn:hover {
+      background-color: blue;
+      transform: scale(1.05);
+    }
+  
+  #ggg{
+    width: 50%;
+
+  }
+
+
+    .text-center a {
+      color: #e50914;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  
+    .text-center a:hover {
+      text-decoration: underline;
+      color: blue;
+    }
+  
+    h2:hover {
+      color: blue;
+      transform: scale(1.05);
+    }
+  </style>
+  
+
+</head>
+
+<body>
+  <%- include('partials/header') %>
+  <br><br><br><br><br><br>
+
+  <body>
+    <div class="login-container" id="loginContainer">
+        <h2 class="text-center mb-4">Admin Log In</h2>
+        <form class="login-form" id="login-form">
+            <div class="form-group">
+                <label for="name">Username</label>
+                <input type="name" class="form-control" id="email" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-btn" id="login-button">Log In</button>
+        </form>
+    </div>
+
+    <div id="movie-form" class="login-container" style="display: none;">
+        <h2>Add Movie</h2>
+        <input type="text" class="form-control" id="Title" placeholder="Title" required>
+        <input type="text" class="form-control" id="Year" placeholder="Year" required>
+        <input type="text" class="form-control" id="Rated" placeholder="Rated" required>
+        <input type="text" class="form-control" id="Released" placeholder="Released" required>
+        <input type="text" class="form-control" id="Runtime" placeholder="Runtime" required>
+        <input type="text" class="form-control" id="Genre" placeholder="Genre" required>
+        <input type="text" class="form-control" id="Director" placeholder="Director" required>
+        <input type="text" class="form-control" id="Writer" placeholder="Writer" required>
+        <input type="text" class="form-control" id="Actors" placeholder="Actors" required>
+        <input type="text" class="form-control" id="Plot" placeholder="Plot" required>
+        <input type="text" class="form-control" id="Language" placeholder="Language" required>
+        <input type="text" class="form-control" id="Country" placeholder="Country" required>
+        <input type="text" class="form-control" id="Awards" placeholder="Awards" required>
+        <input type="text" class="form-control" id="Poster" placeholder="Poster URL" required>
+        <input type="text" class="form-control" id="Metascore" placeholder="Metascore" value="N/A">
+        <input type="text" class="form-control" id="imdbRating" placeholder="IMDB Rating" value="N/A">
+        <input type="text" class="form-control" id="imdbVotes" placeholder="IMDB Votes" value="N/A">
+        <input type="text" class="form-control" id="imdbID" placeholder="IMDB ID" required>
+        <input type="text" class="form-control" id="Type" placeholder="Type" required>
+        <input type="text" class="form-control" id="Response" placeholder="Response" required>
+        <button id="add-button" class="login-btn">Add Movie</button>
+        <button id="logout-button" class="login-btn" style="display: none;">Logout</button>
+    </div>
+
+
+
+    <%- include('partials/footer') %>
+
+
+    <script>
+        document.getElementById('login-button').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+            login();
+        });
+        document.getElementById('add-button').addEventListener('click', addMovie);
+        document.getElementById('logout-button').addEventListener('click', logout);
+
+        let isLoggedIn = false;
+
+        async function login() {
+    const username = document.getElementById('email').value; 
+    const password = document.getElementById('password').value; 
+
+    try {
+        const response = await fetch('/api/users');
+        const usersData = await response.json();
+        let loginSuccess = false;
+
+        for (let user of usersData) {
+            if (user._id === "674c8ee2e1b5e92cdf6887a9" && user.fullName === username && user.password === password) {
+                loginSuccess = true;
+                alert(`Welcome ${user.fullName}.`); 
+                break;
+            }
+        }
+
+        if (loginSuccess) {
+            isLoggedIn = true; 
+            toggleForms(); 
+        } else {
+            alert('Invalid username or password.'); 
+        }
+    } catch (error) {
+        console.error('Error fetching user data:', error);
+        alert('An error occurred while logging in.'); 
+    }
+}
+
+        function logout() {
+            isLoggedIn = false;
+            toggleForms();
+        }
+
+        function toggleForms() {
+            const loginContainer = document.getElementById('loginContainer');
+            const movieForm = document.getElementById('movie-form');
+            const logoutButton = document.getElementById('logout-button');
+
+            if (isLoggedIn) {
+                loginContainer.style.display = 'none';
+                movieForm.style.display = 'block';
+                logoutButton.style.display = 'inline-block';
+            } else {
+                loginContainer.style.display = 'block';
+                movieForm.style.display = 'none';
+                logoutButton.style.display = 'none';
+            }
+        }
+
+        async function addMovie() {
+    const movieData = {
+        Title: document.getElementById('Title').value,
+        Year: document.getElementById('Year').value,
+        Rated: document.getElementById('Rated').value,
+        Released: document.getElementById('Released').value,
+        Runtime: document.getElementById('Runtime').value,
+        Genre: document.getElementById('Genre').value,
+        Director: document.getElementById('Director').value,
+        Writer: document.getElementById('Writer').value,
+        Actors: document.getElementById('Actors').value,
+        Plot: document.getElementById('Plot').value,
+        Language: document.getElementById('Language').value,
+        Country: document.getElementById('Country').value,
+        Awards: document.getElementById('Awards').value,
+        Poster: document.getElementById('Poster').value,
+        Metascore: document.getElementById('Metascore').value,
+        imdbRating: document.getElementById('imdbRating').value,
+        imdbVotes: document.getElementById('imdbVotes').value,
+        imdbID: document.getElementById('imdbID').value,
+        Type: document.getElementById('Type').value,
+        Response: document.getElementById('Response').value,
+        ComingSoon: false 
+    };
+
+    try {
+        const response = await fetch('/api/movie', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(movieData)
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to add movie');
+        }
+
+        const result = await response.json();
+        console.log('Movie added:', result);
+        
+        alert('Movie added successfully!');
+
+        document.getElementById('movie-form').reset();
+    } catch (error) {
+        console.error('Error adding movie:', error);
+    }
+}
+    
+    </script>
+</body>
+
+
+
+
+</body>
+</html>
