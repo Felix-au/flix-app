@@ -69,6 +69,9 @@ app.get('/modify', (req, res) => {
 app.get('/msg', (req, res) => {
   res.render('msg', { title: 'Messages' });
 });
+app.get('/add', (req, res) => {
+  res.render('add', { title: 'Messages' });
+});
 
 const userdataRoutes = require('./routes/userdata');
 app.use('/api', userdataRoutes);
