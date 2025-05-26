@@ -21,6 +21,9 @@ app.get('/', (req, res) => {
 app.get('/Index', (req, res) => {
     res.render('index', { title: 'Flix' });
 });
+app.get('/admin', (req, res) => {
+    res.render('admin', { title: 'Admin' });
+});
 app.get('/login', (req, res) => {
   res.render('login', { title: 'Flix' });
 });
@@ -70,7 +73,7 @@ app.get('/msg', (req, res) => {
   res.render('msg', { title: 'Messages' });
 });
 app.get('/add', (req, res) => {
-  res.render('add', { title: 'Messages' });
+  res.render('add', { title: 'Add' });
 });
 
 const userdataRoutes = require('./routes/userdata');

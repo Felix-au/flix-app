@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flix</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    .col2{
+    padding-left: 130px;
+
+}
+    body {
+      background-color: #141414;
+      color: #ffffff;
+    }
+  
+    .login-container {
+      max-width: 450px;
+      margin: 80px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .login-container:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
+    }
+  
+    .login-container h2 {
+      color: #e50914;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .login-container h2:hover {
+      color: blue;
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
+    }
+  
+    .login-form .form-group {
+      margin-bottom: 20px;
+    }
+  
+    .login-form label {
+      font-weight: bold;
+      color: #bbb;
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+  
+    .login-form .form-control {
+      background-color: black;
+      border: 1px solid #444;
+      border-radius: 6px;
+      color: #fff;
+      height: 50px;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .login-form .form-control:focus {
+      outline: none;
+      border-color: #e50914;
+      box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
+      transform: scale(1.02);
+      color: red;
+    }
+  
+    .login-btn {
+      background-color: #e50914;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+   
+
+
+    .login-btn:hover {
+      background-color: blue;
+      transform: scale(1.05);
+    }
+  
+  #ggg{
+    width: 50%;
+
+  }
+
+
+    .text-center a {
+      color: #e50914;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  
+    .text-center a:hover {
+      text-decoration: underline;
+      color: blue;
+    }
+  
+    h2:hover {
+      color: blue;
+      transform: scale(1.05);
+    }
+    .col2{
+    padding-left: 130px;
+
+}
+    body {
+      background-color: #141414;
+      color: #ffffff;
+    }
+  
+    .login-container {
+      max-width: 450px;
+      margin: 80px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .login-container:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
+    }
+  
+    .login-container h2 {
+      color: #e50914;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .login-container h2:hover {
+      color: blue;
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
+    }
+  
+    .login-form .form-group {
+      margin-bottom: 20px;
+    }
+  
+    .login-form label {
+      font-weight: bold;
+      color: #bbb;
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+  
+    .login-form .form-control {
+      background-color: black;
+      border: 1px solid #444;
+      border-radius: 6px;
+      color: #fff;
+      height: 50px;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .login-form .form-control:focus {
+      outline: none;
+      border-color: #e50914;
+      box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
+      transform: scale(1.02);
+      color: red;
+    }
+  
+    .login-btn {
+      background-color: #e50914;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+   
+
+
+    .login-btn:hover {
+      background-color: blue;
+      transform: scale(1.05);
+    }
+  
+  #ggg{
+    width: 50%;
+
+  }
+
+
+    .text-center a {
+      color: #e50914;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  
+    .text-center a:hover {
+      text-decoration: underline;
+      color: blue;
+    }
+  
+    h2:hover {
+      color: blue;
+      transform: scale(1.05);
+    }
+    .messages-list {
+    max-width: 800px; 
+    margin: 20px auto;
+    padding: 20px; 
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.messages-list div {
+    margin-bottom: 15px; 
+    padding: 10px; 
+    border: 1px solid #444; 
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.messages-list strong {
+    color: #e50914; 
+}
+
+.messages-list p {
+    margin: 0; 
+    color: #fff; 
+}
+.messages-list div:hover {
+    transform: scale(1.01);
+      box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
+}
+
+.messages-list:hover {
+    transform: scale(1.01);
+      box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
+}
+
+
+
+
+
+
+        .col2{
+    padding-left: 130px;
+
+}
+    body {
+      background-color: #141414;
+      color: #ffffff;
+    }
+  
+    .login-container {
+      max-width: 450px;
+      margin: 80px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .login-container:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
+    }
+  
+    .login-container h2 {
+      color: #e50914;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .login-container h2:hover {
+      color: blue;
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
+    }
+  
+    .login-form .form-group {
+      margin-bottom: 20px;
+    }
+  
+    .login-form label {
+      font-weight: bold;
+      color: #bbb;
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+  
+    .login-form .form-control {
+      background-color: black;
+      border: 1px solid #444;
+      border-radius: 6px;
+      color: #fff;
+      height: 50px;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .login-form .form-control:focus {
+      outline: none;
+      border-color: #e50914;
+      box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
+      transform: scale(1.02);
+      color: red;
+    }
+  
+    .login-btn {
+      background-color: #e50914;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+   
+
+
+    .login-btn:hover {
+      background-color: blue;
+      transform: scale(1.05);
+    }
+  
+  #ggg{
+    width: 50%;
+
+  }
+
+
+    .text-center a {
+      color: #e50914;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  
+    .text-center a:hover {
+      text-decoration: underline;
+      color: blue;
+    }
+  
+    h2:hover {
+      color: blue;
+      transform: scale(1.05);
+    }
+    .col2{ padding-left: 130px; }
+    body { background-color: #141414; color: #ffffff; }
+    .login-container { max-width: 450px; margin: 80px auto; padding: 30px; background-color: rgba(255,255,255,0.1); border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s; }
+    .login-container:hover { transform: scale(1.05); box-shadow: 0 20px 40px rgba(229,9,20,0.5);}
+    .login-container h2 { color: #e50914; font-size: 1.8rem; font-weight: bold; text-align: center; margin-bottom: 30px; transition: background-color 0.5s, transform 0.3s, box-shadow 0.3s;}
+    .login-container h2:hover { color: blue; transform: scale(1.05); box-shadow: 0 4px 10px rgba(229,9,20,0.3);}
+    .login-form .form-group { margin-bottom: 20px;}
+    .login-form label { font-weight: bold; color: #bbb; margin-bottom: 5px; font-size: 1rem;}
+    .login-form .form-control { background-color: black; border: 1px solid #444; border-radius: 6px; color: #fff; height: 50px; padding: 0.5rem 1rem; font-size: 1rem; transition: transform 0.3s, box-shadow 0.3s;}
+    .login-form .form-control:focus { outline: none; border-color: #e50914; box-shadow: 0 0 0 3px rgba(229,9,20,0.2); transform: scale(1.02); color: red;}
+    .login-btn { background-color: #e50914; border: none; color: #fff; font-weight: bold; padding: 15px; border-radius: 6px; font-size: 1.1rem; width: 100%; cursor: pointer; transition: background-color 0.5s, transform 0.3s, box-shadow 0.3s;}
+    .login-btn:hover { background-color: blue; transform: scale(1.05);}
+    #ggg{ width: 50%; }
+    .text-center a { color: #e50914; text-decoration: none; font-weight: bold;}
+    .text-center a:hover { text-decoration: underline; color: blue;}
+    h2:hover { color: blue; transform: scale(1.05);}
+    /* Styles for messages list */
+    .messages-list { max-width: 800px; margin: 20px auto; padding: 20px; background-color: rgba(255,255,255,0.1); border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.3);}
+    .messages-list div { margin-bottom: 15px; padding: 10px; border: 1px solid #444; border-radius: 6px; background-color: rgba(255,255,255,0.2);}
+    .messages-list strong { color: #e50914;}
+    .messages-list p { margin: 0; color: #fff;}
+    .messages-list div:hover { transform: scale(1.01); box-shadow: 0 20px 40px rgba(229,9,20,0.5);}
+    .messages-list:hover { transform: scale(1.01); box-shadow: 0 20px 40px rgba(229,9,20,0.5);}
+  </style>
+</head>
+<body>
+  <%- include('partials/header') %>
+  <br><br><br><br><br><br>
+
+  <!-- Login Section -->
+  <div class="login-container" id="loginContainer">
+    <h2 class="text-center mb-4">Admin Log In</h2>
+    <form class="login-form">
+      <div class="form-group">
+        <label for="name">Username</label>
+        <input type="name" class="form-control" id="email" placeholder="Enter your username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="login-btn">Log In</button>
+    </form>
+  </div>
+
+  <!-- Admin Menu -->
+  <div class="login-container" id="adminMenu" style="display: none;">
+    <h2 class="text-center mb-4">Admin Panel</h2>
+    <button class="login-btn" onclick="showSection('modify')">Modify Movies</button>
+    <button class="login-btn" onclick="showSection('add')">Add Movie</button>
+    <button class="login-btn" onclick="showSection('messages')">View Messages</button>
+    <button class="login-btn" onclick="logout()">Log Out</button>
+  </div>
+
+  <!-- Modify Movies Section -->
+  <div class="movie-container" id="movieContainer" style="display: none;">
+    <h2 class="text-center mb-4">Modify Movies</h2>
+    <div id="moviesList"></div>
+    <div id="editModal" style="display: none;">
+      <div>
+        <h3>Edit Movie</h3>
+        <form id="editMovieForm">
+          <input type="hidden" id="movieId" />
+          <!-- All edit fields as in your original modify.ejs -->
+          <div class="form-group"><label for="editTitle">Title</label><input type="text" class="form-control" id="editTitle" required></div>
+          <div class="form-group"><label for="editYear">Year</label><input type="text" class="form-control" id="editYear" required></div>
+          <div class="form-group"><label for="editRated">Rated</label><input type="text" class="form-control" id="editRated" required></div>
+          <div class="form-group"><label for="editReleased">Released</label><input type="text" class="form-control" id="editReleased" required></div>
+          <div class="form-group"><label for="editRuntime">Runtime</label><input type="text" class="form-control" id="editRuntime" required></div>
+          <div class="form-group"><label for="editGenre">Genre</label><input type="text" class="form-control" id="editGenre" required></div>
+          <div class="form-group"><label for="editDirector">Director</label><input type="text" class="form-control" id="editDirector" required></div>
+          <div class="form-group"><label for="editWriter">Writer</label><input type="text" class="form-control" id="editWriter" required></div>
+          <div class="form-group"><label for="editActors">Actors</label><input type="text" class="form-control" id="editActors" required></div>
+          <div class="form-group"><label for="editPlot">Plot</label><textarea class="form-control" id="editPlot" required></textarea></div>
+          <div class="form-group"><label for="editLanguage">Language</label><input type="text" class="form-control" id="editLanguage" required></div>
+          <div class="form-group"><label for="editCountry">Country</label><input type="text" class="form-control" id="editCountry" required></div>
+          <div class="form-group"><label for="editAwards">Awards</label><input type="text" class="form-control" id="editAwards" required></div>
+          <div class="form-group"><label for="editPoster">Poster URL</label><input type="text" class="form-control" id="editPoster" required></div>
+          <div class="form-group"><label for="editMetascore">Metascore</label><input type="text" class="form-control" id="editMetascore"></div>
+          <div class="form-group"><label for="editImdbRating">IMDB Rating</label><input type="text" class="form-control" id="editImdbRating"></div>
+          <div class="form-group"><label for="editImdbVotes">IMDB Votes</label><input type="text" class="form-control" id="editImdbVotes"></div>
+          <div class="form-group"><label for="editImdbID">IMDB ID</label><input type="text" class="form-control" id="editImdbID" required></div>
+          <div class="form-group"><label for="editType">Type</label><input type="text" class="form-control" id="editType" required></div>
+          <div class="form-group"><label for="editResponse">Response</label><input type="text" class="form-control" id="editResponse" required></div>
+          <button type="submit" class="login-btn">Update</button>
+        </form>
+        <button class="login-btn" id="deleteMovieBtn">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Movie Section -->
+  <div id="movie-form" class="login-container" style="display: none;">
+    <h2>Add Movie</h2>
+    <input type="text" class="form-control" id="Title" placeholder="Title" required>
+    <input type="text" class="form-control" id="Year" placeholder="Year" required>
+    <input type="text" class="form-control" id="Rated" placeholder="Rated" required>
+    <input type="text" class="form-control" id="Released" placeholder="Released" required>
+    <input type="text" class="form-control" id="Runtime" placeholder="Runtime" required>
+    <input type="text" class="form-control" id="Genre" placeholder="Genre" required>
+    <input type="text" class="form-control" id="Director" placeholder="Director" required>
+    <input type="text" class="form-control" id="Writer" placeholder="Writer" required>
+    <input type="text" class="form-control" id="Actors" placeholder="Actors" required>
+    <input type="text" class="form-control" id="Plot" placeholder="Plot" required>
+    <input type="text" class="form-control" id="Language" placeholder="Language" required>
+    <input type="text" class="form-control" id="Country" placeholder="Country" required>
+    <input type="text" class="form-control" id="Awards" placeholder="Awards" required>
+    <input type="text" class="form-control" id="Poster" placeholder="Poster URL" required>
+    <input type="text" class="form-control" id="Metascore" placeholder="Metascore" value="N/A">
+    <input type="text" class="form-control" id="imdbRating" placeholder="IMDB Rating" value="N/A">
+    <input type="text" class="form-control" id="imdbVotes" placeholder="IMDB Votes" value="N/A">
+    <input type="text" class="form-control" id="imdbID" placeholder="IMDB ID" required>
+    <input type="text" class="form-control" id="Type" placeholder="Type" required>
+    <input type="text" class="form-control" id="Response" placeholder="Response" required>
+    <button id="add-button" class="login-btn">Add Movie</button>
+  </div>
+
+  <!-- Messages Section -->
+  <div id="messagesContainer" style="display: none;">
+    <h2 class="text-center mb-4">User Messages</h2>
+    <div id="messagesList" class="messages-list"></div>
+  </div>
+
+  <%- include('partials/footer') %>
+
+  <script>
+    // --- Login logic shared by all ---
+    document.querySelector('.login-btn').addEventListener('click', async function(e) {
+      e.preventDefault();
+      const username = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      try {
+        const response = await fetch('/api/users');
+        const usersData = await response.json();
+        let loginSuccess = false;
+        for (let user of usersData) {
+          if (user._id === "674c8ee2e1b5e92cdf6887a9" && user.fullName === username && user.password === password) {
+            loginSuccess = true;
+            alert(`Welcome ${user.fullName}.`);
+            break;
+          }
+        }
+        if (loginSuccess) {
+          document.getElementById('loginContainer').style.display = 'none';
+          document.getElementById('adminMenu').style.display = 'block';
+        } else {
+          alert('Invalid username or password.');
+        }
+      } catch (error) {
+        console.error('Error during login:', error);
+        alert('An error occurred. Please try again later.');
+      }
+    });
+
+    // --- Admin menu navigation ---
+    function showSection(section) {
+      document.getElementById('adminMenu').style.display = 'none';
+      document.getElementById('movieContainer').style.display = 'none';
+      document.getElementById('movie-form').style.display = 'none';
+      document.getElementById('messagesContainer').style.display = 'none';
+      if (section === 'modify') {
+        document.getElementById('movieContainer').style.display = 'block';
+        fetchMovies();
+      } else if (section === 'add') {
+        document.getElementById('movie-form').style.display = 'block';
+      } else if (section === 'messages') {
+        document.getElementById('messagesContainer').style.display = 'block';
+        fetchMessages();
+      }
+    }
+    function logout() {
+      document.getElementById('adminMenu').style.display = 'none';
+      document.getElementById('movieContainer').style.display = 'none';
+      document.getElementById('movie-form').style.display = 'none';
+      document.getElementById('messagesContainer').style.display = 'none';
+      document.getElementById('loginContainer').style.display = 'block';
+      document.getElementById('email').value = '';
+      document.getElementById('password').value = '';
+    }
+
+    // --- Modify Movies logic (from modify.ejs) ---
+    async function fetchMovies() {
+      try {
+        const response = await fetch('/api/movie');
+        const movies = await response.json();
+        const moviesList = document.getElementById('moviesList');
+        moviesList.innerHTML = '';
+        movies.forEach(movie => {
+          const movieDiv = document.createElement('div');
+          movieDiv.style.display = 'flex';
+          movieDiv.style.alignItems = 'center';
+          movieDiv.style.justifyContent = 'space-between';
+          movieDiv.style.marginBottom = '10px';
+          movieDiv.innerHTML = `
+            <img src="${movie.Poster}" alt="${movie.Title}" style="width: 100px; height: auto; margin-right: 10px; cursor: pointer;" onclick="openEditModal('${movie._id}')">
+            <span style="flex-grow: 1; text-align: center;">${movie.Title}</span>
+            <button style="margin-left: 10px;" class="login-btn" id="ggg" onclick="deleteMovie('${movie._id}')">Delete</button>
+          `;
+          moviesList.appendChild(movieDiv);
+        });
+      } catch (error) {
+        console.error('Error fetching movies:', error);
+      }
+    }
+    function openEditModal(movieId) {
+      fetch(`/api/movie/${movieId}`)
+        .then(response => response.json())
+        .then(movie => {
+          document.getElementById('movieId').value = movie._id;
+          document.getElementById('editTitle').value = movie.Title;
+          document.getElementById('editYear').value = movie.Year;
+          document.getElementById('editRated').value = movie.Rated;
+          document.getElementById('editReleased').value = movie.Released;
+          document.getElementById('editRuntime').value = movie.Runtime;
+          document.getElementById('editGenre').value = movie.Genre;
+          document.getElementById('editDirector').value = movie.Director;
+          document.getElementById('editWriter').value = movie.Writer;
+          document.getElementById('editActors').value = movie.Actors;
+          document.getElementById('editPlot').value = movie.Plot;
+          document.getElementById('editLanguage').value = movie.Language;
+          document.getElementById('editCountry').value = movie.Country;
+          document.getElementById('editAwards').value = movie.Awards;
+          document.getElementById('editPoster').value = movie.Poster;
+          document.getElementById('editMetascore').value = movie.Metascore || "N/A";
+          document.getElementById('editImdbRating').value = movie.imdbRating || "N/A";
+          document.getElementById('editImdbVotes').value = movie.imdbVotes || "N/A";
+          document.getElementById('editImdbID').value = movie.imdbID;
+          document.getElementById('editType').value = movie.Type;
+          document.getElementById('editResponse').value = movie.Response;
+          document.getElementById('editModal').style.display = 'block';
+        })
+        .catch(error => console.error('Error fetching movie details:', error));
+    }
+    document.getElementById('editMovieForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const movieId = document.getElementById('movieId').value;
+      const updatedData = {
+        Title: document.getElementById('editTitle').value,
+        Year: document.getElementById('editYear').value,
+        Rated: document.getElementById('editRated').value,
+        Released: document.getElementById('editReleased').value,
+        Runtime: document.getElementById('editRuntime').value,
+        Genre: document.getElementById('editGenre').value,
+        Director: document.getElementById('editDirector').value,
+        Writer: document.getElementById('editWriter').value,
+        Actors: document.getElementById('editActors').value,
+        Plot: document.getElementById('editPlot').value,
+        Language: document.getElementById('editLanguage').value,
+        Country: document.getElementById('editCountry').value,
+        Awards: document.getElementById('editAwards').value,
+        Poster: document.getElementById('editPoster').value,
+        Metascore: document.getElementById('editMetascore').value || "N/A",
+        imdbRating: document.getElementById('editImdbRating').value || "N/A",
+        imdbVotes: document.getElementById('editImdbVotes').value || "N/A",
+        imdbID: document.getElementById('editImdbID').value,
+        Type: document.getElementById('editType').value,
+        Response: document.getElementById('editResponse').value,
+      };
+      try {
+        const response = await fetch(`/api/movie/${movieId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(updatedData),
+        });
+        if (response.ok) {
+          alert('Movie updated successfully');
+          fetchMovies();
+          document.getElementById('editModal').style.display = 'none';
+        } else {
+          alert('Failed to update movie');
+        }
+      } catch (error) {
+        console.error('Error updating movie:', error);
+      }
+    });
+    document.getElementById('deleteMovieBtn').addEventListener('click', async function() {
+      const movieId = document.getElementById('movieId').value;
+      if (confirm('Are you sure you want to delete this movie?')) {
+        try {
+          const response = await fetch(`/api/movie/${movieId}`, { method: 'DELETE' });
+          if (response.ok) {
+            alert('Movie deleted successfully');
+            fetchMovies();
+            document.getElementById('editModal').style.display = 'none';
+          } else {
+            alert('Failed to delete movie');
+          }
+        } catch (error) {
+          console.error('Error deleting movie:', error);
+        }
+      }
+    });
+    async function deleteMovie(movieId) {
+      if (confirm('Are you sure you want to delete this movie?')) {
+        try {
+          const response = await fetch(`/api/movie/${movieId}`, { method: 'DELETE' });
+          if (response.ok) {
+            alert('Movie deleted successfully');
+            fetchMovies();
+          } else {
+            alert('Failed to delete movie');
+          }
+        } catch (error) {
+          console.error('Error deleting movie:', error);
+        }
+      }
+    }
+
+    // --- Add Movie logic (from add.ejs) ---
+    document.getElementById('add-button').addEventListener('click', addMovie);
+    async function addMovie(e) {
+      if (e) e.preventDefault();
+      const movieData = {
+        Title: document.getElementById('Title').value,
+        Year: document.getElementById('Year').value,
+        Rated: document.getElementById('Rated').value,
+        Released: document.getElementById('Released').value,
+        Runtime: document.getElementById('Runtime').value,
+        Genre: document.getElementById('Genre').value,
+        Director: document.getElementById('Director').value,
+        Writer: document.getElementById('Writer').value,
+        Actors: document.getElementById('Actors').value,
+        Plot: document.getElementById('Plot').value,
+        Language: document.getElementById('Language').value,
+        Country: document.getElementById('Country').value,
+        Awards: document.getElementById('Awards').value,
+        Poster: document.getElementById('Poster').value,
+        Metascore: document.getElementById('Metascore').value,
+        imdbRating: document.getElementById('imdbRating').value,
+        imdbVotes: document.getElementById('imdbVotes').value,
+        imdbID: document.getElementById('imdbID').value,
+        Type: document.getElementById('Type').value,
+        Response: document.getElementById('Response').value,
+        ComingSoon: false
+      };
+      try {
+        const response = await fetch('/api/movie', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(movieData)
+        });
+        if (!response.ok) throw new Error('Failed to add movie');
+        alert('Movie added successfully!');
+        // Optionally clear fields here
+      } catch (error) {
+        console.error('Error adding movie:', error);
+      }
+    }
+
+    // --- Messages logic (from msg.ejs) ---
+    async function fetchMessages() {
+      try {
+        const response = await fetch('/api/msgs');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const messages = await response.json();
+        const messagesList = document.getElementById('messagesList');
+        messagesList.innerHTML = '';
+        if (messages.length === 0) {
+          messagesList.innerHTML = '<p>No messages available.</p>';
+        } else {
+          messages.forEach(msg => {
+            const messageDiv = document.createElement('div');
+            messageDiv.innerHTML = `<strong>${msg.name}</strong> (${msg.email}): <p>${msg.message}</p>`;
+            messagesList.appendChild(messageDiv);
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching messages:', error);
+        document.getElementById('messagesList').innerHTML = '<p>Error fetching messages. Please try again later.</p>';
+      }
+    }
+  </script>
+</body>
+</html>
