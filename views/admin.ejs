@@ -8,401 +8,143 @@
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/css/style.css" />
-  <style>
-    .col2{
-    padding-left: 130px;
-
-}
-    body {
-      background-color: #141414;
-      color: #ffffff;
-    }
-  
-    .login-container {
-      max-width: 450px;
-      margin: 80px auto;
-      padding: 30px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-  
-    .login-container:hover {
-      transform: scale(1.05);
-      box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
-    }
-  
-    .login-container h2 {
-      color: #e50914;
-      font-size: 1.8rem;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 30px;
-      transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
-  
-    .login-container h2:hover {
-      color: blue;
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
-    }
-  
-    .login-form .form-group {
-      margin-bottom: 20px;
-    }
-  
-    .login-form label {
-      font-weight: bold;
-      color: #bbb;
-      margin-bottom: 5px;
-      font-size: 1rem;
-    }
-  
-    .login-form .form-control {
-      background-color: black;
-      border: 1px solid #444;
-      border-radius: 6px;
-      color: #fff;
-      height: 50px;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-  
-    .login-form .form-control:focus {
-      outline: none;
-      border-color: #e50914;
-      box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
-      transform: scale(1.02);
-      color: red;
-    }
-  
-    .login-btn {
-      background-color: #e50914;
-      border: none;
-      color: #fff;
-      font-weight: bold;
-      padding: 15px;
-      border-radius: 6px;
-      font-size: 1.1rem;
-      width: 100%;
-      cursor: pointer;
-      transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
-   
-
-
-    .login-btn:hover {
-      background-color: blue;
-      transform: scale(1.05);
-    }
-  
-  #ggg{
-    width: 50%;
-
+ <style>
+  body {
+    background-color: #141414;
+    color: #ffffff;
   }
 
-
-    .text-center a {
-      color: #e50914;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  
-    .text-center a:hover {
-      text-decoration: underline;
-      color: blue;
-    }
-  
-    h2:hover {
-      color: blue;
-      transform: scale(1.05);
-    }
-    .col2{
+  .col2 {
     padding-left: 130px;
-
-}
-    body {
-      background-color: #141414;
-      color: #ffffff;
-    }
-  
-    .login-container {
-      max-width: 450px;
-      margin: 80px auto;
-      padding: 30px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-  
-    .login-container:hover {
-      transform: scale(1.05);
-      box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
-    }
-  
-    .login-container h2 {
-      color: #e50914;
-      font-size: 1.8rem;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 30px;
-      transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
-  
-    .login-container h2:hover {
-      color: blue;
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
-    }
-  
-    .login-form .form-group {
-      margin-bottom: 20px;
-    }
-  
-    .login-form label {
-      font-weight: bold;
-      color: #bbb;
-      margin-bottom: 5px;
-      font-size: 1rem;
-    }
-  
-    .login-form .form-control {
-      background-color: black;
-      border: 1px solid #444;
-      border-radius: 6px;
-      color: #fff;
-      height: 50px;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-  
-    .login-form .form-control:focus {
-      outline: none;
-      border-color: #e50914;
-      box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
-      transform: scale(1.02);
-      color: red;
-    }
-  
-    .login-btn {
-      background-color: #e50914;
-      border: none;
-      color: #fff;
-      font-weight: bold;
-      padding: 15px;
-      border-radius: 6px;
-      font-size: 1.1rem;
-      width: 100%;
-      cursor: pointer;
-      transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
-   
-
-
-    .login-btn:hover {
-      background-color: blue;
-      transform: scale(1.05);
-    }
-  
-  #ggg{
-    width: 50%;
-
   }
 
-
-    .text-center a {
-      color: #e50914;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  
-    .text-center a:hover {
-      text-decoration: underline;
-      color: blue;
-    }
-  
-    h2:hover {
-      color: blue;
-      transform: scale(1.05);
-    }
-    .messages-list {
-    max-width: 800px; 
-    margin: 20px auto;
-    padding: 20px; 
+  .login-container {
+    max-width: 450px;
+    margin: 80px auto;
+    padding: 30px;
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px; 
+    border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-.messages-list div {
-    margin-bottom: 15px; 
-    padding: 10px; 
-    border: 1px solid #444; 
+  .login-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
+  }
+
+  .login-container h2 {
+    color: #e50914;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .login-container h2:hover,
+  h2:hover {
+    color: blue;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
+  }
+
+  .login-form .form-group {
+    margin-bottom: 20px;
+  }
+
+  .login-form label {
+    font-weight: bold;
+    color: #bbb;
+    margin-bottom: 5px;
+    font-size: 1rem;
+  }
+
+  .login-form .form-control {
+    background-color: black;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: #fff;
+    height: 50px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .login-form .form-control:focus {
+    outline: none;
+    border-color: #e50914;
+    box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
+    transform: scale(1.02);
+    color: red;
+  }
+
+  .login-btn {
+    background-color: #e50914;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .login-btn:hover {
+    background-color: blue;
+    transform: scale(1.05);
+  }
+
+  #ggg {
+    width: 50%;
+  }
+
+  .text-center a {
+    color: #e50914;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .text-center a:hover {
+    text-decoration: underline;
+    color: blue;
+  }
+
+  .messages-list {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .messages-list div {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #444;
     border-radius: 6px;
     background-color: rgba(255, 255, 255, 0.2);
-}
-
-.messages-list strong {
-    color: #e50914; 
-}
-
-.messages-list p {
-    margin: 0; 
-    color: #fff; 
-}
-.messages-list div:hover {
-    transform: scale(1.01);
-      box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
-}
-
-.messages-list:hover {
-    transform: scale(1.01);
-      box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
-}
-
-
-
-
-
-
-        .col2{
-    padding-left: 130px;
-
-}
-    body {
-      background-color: #141414;
-      color: #ffffff;
-    }
-  
-    .login-container {
-      max-width: 450px;
-      margin: 80px auto;
-      padding: 30px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-  
-    .login-container:hover {
-      transform: scale(1.05);
-      box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
-    }
-  
-    .login-container h2 {
-      color: #e50914;
-      font-size: 1.8rem;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 30px;
-      transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
-  
-    .login-container h2:hover {
-      color: blue;
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
-    }
-  
-    .login-form .form-group {
-      margin-bottom: 20px;
-    }
-  
-    .login-form label {
-      font-weight: bold;
-      color: #bbb;
-      margin-bottom: 5px;
-      font-size: 1rem;
-    }
-  
-    .login-form .form-control {
-      background-color: black;
-      border: 1px solid #444;
-      border-radius: 6px;
-      color: #fff;
-      height: 50px;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-  
-    .login-form .form-control:focus {
-      outline: none;
-      border-color: #e50914;
-      box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
-      transform: scale(1.02);
-      color: red;
-    }
-  
-    .login-btn {
-      background-color: #e50914;
-      border: none;
-      color: #fff;
-      font-weight: bold;
-      padding: 15px;
-      border-radius: 6px;
-      font-size: 1.1rem;
-      width: 100%;
-      cursor: pointer;
-      transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
-   
-
-
-    .login-btn:hover {
-      background-color: blue;
-      transform: scale(1.05);
-    }
-  
-  #ggg{
-    width: 50%;
-
   }
 
+  .messages-list strong {
+    color: #e50914;
+  }
 
-    .text-center a {
-      color: #e50914;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  
-    .text-center a:hover {
-      text-decoration: underline;
-      color: blue;
-    }
-  
-    h2:hover {
-      color: blue;
-      transform: scale(1.05);
-    }
-    .col2{ padding-left: 130px; }
-    body { background-color: #141414; color: #ffffff; }
-    .login-container { max-width: 450px; margin: 80px auto; padding: 30px; background-color: rgba(255,255,255,0.1); border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s; }
-    .login-container:hover { transform: scale(1.05); box-shadow: 0 20px 40px rgba(229,9,20,0.5);}
-    .login-container h2 { color: #e50914; font-size: 1.8rem; font-weight: bold; text-align: center; margin-bottom: 30px; transition: background-color 0.5s, transform 0.3s, box-shadow 0.3s;}
-    .login-container h2:hover { color: blue; transform: scale(1.05); box-shadow: 0 4px 10px rgba(229,9,20,0.3);}
-    .login-form .form-group { margin-bottom: 20px;}
-    .login-form label { font-weight: bold; color: #bbb; margin-bottom: 5px; font-size: 1rem;}
-    .login-form .form-control { background-color: black; border: 1px solid #444; border-radius: 6px; color: #fff; height: 50px; padding: 0.5rem 1rem; font-size: 1rem; transition: transform 0.3s, box-shadow 0.3s;}
-    .login-form .form-control:focus { outline: none; border-color: #e50914; box-shadow: 0 0 0 3px rgba(229,9,20,0.2); transform: scale(1.02); color: red;}
-    .login-btn { background-color: #e50914; border: none; color: #fff; font-weight: bold; padding: 15px; border-radius: 6px; font-size: 1.1rem; width: 100%; cursor: pointer; transition: background-color 0.5s, transform 0.3s, box-shadow 0.3s;}
-    .login-btn:hover { background-color: blue; transform: scale(1.05);}
-    #ggg{ width: 50%; }
-    .text-center a { color: #e50914; text-decoration: none; font-weight: bold;}
-    .text-center a:hover { text-decoration: underline; color: blue;}
-    h2:hover { color: blue; transform: scale(1.05);}
-    /* Styles for messages list */
-    .messages-list { max-width: 800px; margin: 20px auto; padding: 20px; background-color: rgba(255,255,255,0.1); border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.3);}
-    .messages-list div { margin-bottom: 15px; padding: 10px; border: 1px solid #444; border-radius: 6px; background-color: rgba(255,255,255,0.2);}
-    .messages-list strong { color: #e50914;}
-    .messages-list p { margin: 0; color: #fff;}
-    .messages-list div:hover { transform: scale(1.01); box-shadow: 0 20px 40px rgba(229,9,20,0.5);}
-    .messages-list:hover { transform: scale(1.01); box-shadow: 0 20px 40px rgba(229,9,20,0.5);}
-  </style>
+  .messages-list p {
+    margin: 0;
+    color: #fff;
+  }
+
+  .messages-list:hover,
+  .messages-list div:hover {
+    transform: scale(1.01);
+    box-shadow: 0 20px 40px rgba(229, 9, 20, 0.5);
+  }
+</style>
+
 </head>
 <body>
   <%- include('partials/header') %>
