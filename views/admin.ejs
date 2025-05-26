@@ -592,8 +592,8 @@
           movieDiv.style.marginBottom = '10px';
           movieDiv.innerHTML = `
             <img src="${movie.Poster}" alt="${movie.Title}" style="width: 100px; height: auto; margin-right: 10px; cursor: pointer;" onclick="openEditModal('${movie._id}')">
-            <span style="flex-grow: 1; text-align: center;">${movie.Title}</span>
-            <button style="margin-left: 10px;" class="login-btn" id="ggg" onclick="deleteMovie('${movie._id}')">Delete</button>
+                <span style="flex-grow: 1; text-align: center;">${movie.Title}</span>
+                <button style="margin-left: 10px;" class="login-btn" id = "ggg" onclick="deleteMovie('${movie._id}')">Delete</button>
           `;
           moviesList.appendChild(movieDiv);
         });
